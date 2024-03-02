@@ -1,0 +1,58 @@
+﻿@model List<Product>
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col">
+            <h1>All Products</h1>
+        </div>
+    </div>
+    <div class="row text-end pb-4">
+        <div class="col">
+            <a asp-controller="Product" asp-action="CreateProduct" class="btn btn-primary"> Add A New Product </a>
+        </div>
+
+    </div>
+
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Special Tag</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.ProductID</td>
+                <td>@obj.ProductName</td>
+                <td>@obj.ProductDescription</td>
+                <td>@obj.ProductCategory</td>
+                <td>@obj.Brand</td>
+                <td>@obj.Price</td>
+                <td>@obj.QuantityInStock</td>
+                <td><img src="@obj.ImageUrl" height="50px"/></td>
+
+                <td>@obj.SpecialTag</td>
+
+                <td><a asp-controller="Product" asp-action="UpdateProduct" asp-route-productId="@obj.ProductID" class="btn btn-outline-secondary">Update</a></td>
+
+                <td><a asp-controller="Product" asp-action="DeleteProduct" asp-route-productId="@obj.ProductID" class="btn btn-outline-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="text-center">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-success">Back To Home</a>
+</div>

@@ -1,0 +1,49 @@
+﻿@model List<Product>
+
+<div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var obj in Model)
+        {
+            <div class="col">
+                <div class="card">
+                    <div class="card-header text-end">
+                        <i class="bi bi-star btn btn-outline-warning">
+                            &nbsp; @obj.SpecialTag
+                        </i>
+
+                    </div>
+
+                    <div class="card-img text-center">
+                        <img src="@obj.ImageUrl" alt="@obj.ProductName" height="100" />
+
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <p class="card-title m-0 text-success fs-3">@obj.ProductName</p>
+                            <p class="badge bg-secondary" style="font-size: 12px;">
+                                @obj.ProductCategory
+                            </p>
+                        </div>
+                        <div class="row text-center">
+                            <h4>RM @obj.Price</h4>
+                        </div>
+
+
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="text-center">
+                            <a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@obj.ProductID" class="btn btn-outline-success">View &gt;&gt;&gt;</a>
+
+                        </div>
+                        <div>
+                            <i class="bi bi-cart-plus btn btn-outline-danger"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

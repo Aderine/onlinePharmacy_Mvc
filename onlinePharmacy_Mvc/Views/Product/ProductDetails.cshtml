@@ -1,0 +1,34 @@
+﻿@model Product
+
+<title>Product Detail - @Model.ProductName</title>
+    <div class="container">
+        <h1 class="mt-5 text-primary">Product Detail - @Model.ProductName</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="@Model.ImageUrl" alt="@Model.ProductName" class="img-fluid " >
+            </div>
+            <div class="col-md-8 text-secondary pt-2">
+                <h4>Category: @Model.ProductCategory</h4><br/>
+                 <h5>Description: </h5>
+                <p>@Model.ProductDescription</p>
+                <br/>
+                <h4>Price: RM @Model.Price</h4>
+ 
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="col-md-12">
+            <a href="#" class="bi bi-cart-plus btn btn-outline-primary">    Add to Cart</a>
+            <div>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-success">Back To Home</a>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+

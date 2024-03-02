@@ -1,0 +1,68 @@
+﻿@model Product
+
+<form method="post" enctype="multipart/form-data">
+    <div class="p-3 mt-4">
+        <div><h1>Update Product</h1></div>
+        <div class="pt-2">
+            <label asp-for="ProductID"></label>
+            <input asp-for="ProductID" type="text" disabled class="form-control" />  
+        </div>
+
+        <div class="pt-2">
+            <label asp-for="ProductName"></label>
+            <input asp-for="ProductName" type="text" class="form-control" />
+            <span asp-validation-for="ProductName" class="text-danger"></span>
+        </div>
+
+        <div class="pt-2">
+            <label asp-for="ProductDescription"></label>
+            <input asp-for="ProductDescription" type="text" class="form-control" />
+            <span asp-validation-for="ProductDescription" class="text-danger"></span>
+        </div>
+
+
+        <div class="pt-2">
+            <label asp-for="ProductCategory"></label>
+            <div class="form-control">
+                <select name="ProductCategory">
+                    <option value="medicine">Medicine</option>
+                    <option value="Supplement">Supplement</option>
+                    <option value="medical device">Medical Device</option>
+                </select>
+            </div>
+            <span asp-validation-for="ProductCategory" class="text-danger"></span>
+        </div>
+
+        <div class="pt-2">
+            <label asp-for="Brand"></label>
+            <input asp-for="Brand" type="text" class="form-control" />
+            <span asp-validation-for="Brand" class="text-danger"></span>
+        </div>
+
+        <div class="pt-2">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" type="text" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="pt-2">
+            <label asp-for="QuantityInStock"></label>
+            <input asp-for="QuantityInStock" type="text" class="form-control" />
+            <span asp-validation-for="QuantityInStock" class="text-danger"></span>
+        </div>
+        <div class="pt-2">
+            <label asp-for="SpecialTag"></label>
+            <input asp-for="SpecialTag" type="text" class="form-control" />
+            <span asp-validation-for="SpecialTag" class="text-danger"></span>
+        </div>
+        <div class="pt-2">
+            <label name="imageFile"></label>
+            <input name="imageFile" type="file" class="form-control" />
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <br />
+        <button class="btn btn-primary btn-outline-primary btn-light">Update</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary">Back To List</a>
+    </div>
+</form>
